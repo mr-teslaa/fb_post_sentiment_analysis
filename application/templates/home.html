@@ -1,0 +1,15 @@
+{% extends 'base/root.html' %}
+{% block body %}
+    <!-- START - SELECT PAGE -->
+    <div class="my-3">
+        <h2>Step 1: Select a page</h2>
+        <p class="text-muted">Select a facebook page to fetch the posts</p>
+        <!-- START - FACEBOOK PAGES -->
+        <div id="fb_pages_container"></div>
+        <!-- END - FACEBOOK PAGES -->
+    </div>
+    <!-- END - SELECT PAGE -->
+{% endblock %}
+{% block custom_js %}
+<script src="{{ url_for('static', filename='js/root.js') }}"></script>
+{% endblock %}

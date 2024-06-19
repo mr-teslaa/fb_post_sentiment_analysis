@@ -1,0 +1,24 @@
+{% extends 'base/root.html' %}
+{% block body %}
+    <!-- START - SELECT PAGE -->
+    <div class="my-3">
+        <h2>Step 2: Select a post</h2>
+        <p class="text-muted">Select a facebook post to fetch the comments</p>
+        <!-- START - FACEBOOK POSTS -->
+        <div>
+            {% for post in posts %}
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <p class="card-text text-light">{{ post.message }}</p>
+                        <a href="https://facebook.com/{{ post.id }}"
+                           class="btn btn-secondary w-100 mb-2">See post</a>
+                        <a href="{{ url_for('public.get_comments', page_id=post.page_id, post_id=post.id) }}" class="btn btn-primary w-100">Get comments</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <!-- END - FACEBOOK POSTS -->
+    </div>
+    <!-- END - SELECT PAGE -->
+{% endblock %}
+{% block custom_js %}<script src="{{ url_for('static', filename='posts.js') }}"></script>{% endblock %}

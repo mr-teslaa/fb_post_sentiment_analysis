@@ -1,0 +1,30 @@
+{% extends 'base/root.html' %}
+{% block body %}
+    <!-- START - SELECT PAGE -->
+    <div class="my-3">
+        <h2>Step 3: Sentiment Rating</h2>
+        <p class="text-muted">Sentiment rating table of each comment</p>
+        <!-- START - FACEBOOK POSTS -->
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped table-hover table-dark">
+                <thead>
+                    <tr class="text-center">
+                        <th class="text-info fs-5 fw-bold">Comment</th>
+                        <th class="text-info fs-5 fw-bold">Sentiment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for comment in comments %}
+                    <tr>
+                        <td>{{ comment.message }}</td>
+                        <td>0</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <!-- END - FACEBOOK POSTS -->
+    </div>
+    <!-- END - SELECT PAGE -->
+{% endblock %}
+{% block custom_js %}<script src="{{ url_for('static', filename='posts.js') }}"></script>{% endblock %}
