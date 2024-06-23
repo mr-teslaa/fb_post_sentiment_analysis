@@ -8,6 +8,7 @@ const fetchPages = () => {
 	})
 		.then((response) => response.json())
 		.then((res) => {
+			fb_pages_container.innerHTML = "";
 			if (res.data) {
 				for (let i = 0; i < Object.keys(res.data).length; i++) {
 					const currentPage = res.data[i];

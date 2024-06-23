@@ -61,10 +61,7 @@ class FacebookAPI:
             "access_token": page_access_token
         }
         response = requests.get(url, params=params)
-        print('--------- getting comments -----------')
-        print('post id: ', post_id)
-        print('url: ', url)
-        print('page_access_token: ', page_access_token)
+        
         if response.status_code == 200:
             return response.json().get('data', [])
         return []
